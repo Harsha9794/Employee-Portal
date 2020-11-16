@@ -1,0 +1,84 @@
+<div class="container">
+  <mat-card class="topcard">
+    <mat-card-title class="header" card="title">Employee Registration Form</mat-card-title>
+    
+    <div class="col-md-12">
+    <form [formGroup]="employeeForm" #e="ngForm" (ngSubmit)="saveEmployee(e)">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              placeholder="First Name"
+              formControlName="firstName"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input
+              matInput
+              placeholder="Last Name"
+              formControlName="lastName"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Department</mat-label>
+            <input
+              matInput
+              placeholder="Development"
+              formControlName="department"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field color="accent">
+            <mat-label>Date of Birth</mat-label>
+            <input
+              matInput
+              [matDatepicker]="DOB"
+              formControlName="dateOfBirth"
+              required
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="DOB"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #DOB color="primary"></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <button class="submitbtn"
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="!employeeForm.valid"
+      >
+        Submit
+      </button>
+      <button mat-raised-button type="reset" color="accent">Reset</button>
+    </form>
+    </div>
+  </mat-card>
+</div>
