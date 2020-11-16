@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
+## Running application locally
+
+Take checkout of the code  using git clone https://github.com/Harsha9794/Employee-Portal.git
+
+Import the project into IDE (VSCode) and run npm i command to install the required packages for the application
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
